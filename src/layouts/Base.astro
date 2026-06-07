@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased">
+    <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="/" class="flex items-center gap-2">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-lg font-black text-white">IS</span>
+          <div>
+            <span class="text-lg font-extrabold tracking-tight">全国インターナショナルスクール<span class="text-indigo-600">.com</span></span>
+          </div>
+        </a>
+        <nav class="flex items-center gap-3 text-sm font-medium">
+          <a href="/#classrooms" class="hidden text-slate-600 hover:text-indigo-600 sm:inline">スクールをさがす</a>
+          <a href="/#owner" class="rounded-full bg-amber-400 px-4 py-1.5 font-bold text-amber-950 shadow-sm transition hover:bg-amber-300">スクール掲載・運営者の方へ</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="mt-16 border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
+        <p class="font-bold text-slate-700">全国インターナショナルスクール.com — 日本全国のインター・プリスクール専門ポータル</p>
+        <p class="mt-2">掲載情報は各スクールの公開情報をもとに自動収集・整理しています。最新の学費・募集状況は必ず各スクールの公式サイトでご確認ください。情報の修正・削除をご希望のスクール様は<a href="/#owner" class="text-indigo-600 underline">こちら</a>。姉妹サイト：<a href="https://tokyo-naraigoto.pages.dev" class="text-indigo-600 underline">TOKYO習い事.com</a></p>
+        <p class="mt-4">&copy; 2026 全国インターナショナルスクール.com</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+---
+import Base from '../layouts/Base.astro';
+import classrooms from '../data/classrooms.json';
+
+export const AREA_LABELS = {
+  hokkaido: '北海道',
+  tohoku: '東北',
+  hokuriku: '北陸',
+  kanto: '関東甲信越',
+  chubu: '中部',
+  kansai: '関西',
+  chushikoku: '中国・四国',
+  kyushu: '九州・沖縄',
+};
+export const STAGE_LABELS = {
+  preschool: 'プリ・幼稚部',
+  elementary: '小学部',
+  middle: '中学部',
+  high: '高等部',
+};
+export const FEATURE_LABELS = {
+  boarding: '全寮制（ボーディング）',
+  k12: '高校まで一貫教育',
+  'english-required': '子どもの英語力必須',
+  'parent-english': '保護者の英語力必須',
+  ib: 'IB（国際バカロレア）認定',
+  'support-ja': '英語初心者・日本語サポートあり',
+};
+
+// おすすめ順（パートナー最優先 → 新着順）で初期描画
+const sorted = [...classrooms].sort(
+  (a, b) => Number(b.partner) - Number(a.partner) || b.addedAt.localeCompare(a.addedAt)
+);
+const NEW_THRESHOLD = Date.now() - 14 * 24 * 60 * 60 * 1000;
+const isNew = (c) => new Date(c.addedAt).getTime() > NEW_THRESHOLD;
+const partnerCount = classrooms.filter((c) => c.partner).length;
+---
+<Base
+  title="全国インターナショナルスクール.com｜日本全国のインター・プリスクール検索"
+  description="北海道から九州・沖縄まで、日本全国のインターナショナルスクール・プリスクール・ボーディングスクールを「全寮制」「高校まで一貫」「英語力要件」などの切り口で探せる専門ポータル。"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-indigo-100 via-indigo-50 to-slate-50">
+    <div class="mx-auto max-w-6xl px-4 pb-10 pt-14 text-center">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+        わが子に合うインターナショナルスクールが、<span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">全国から見つかる。</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+        全国8エリアのインター・プリスクール・ボーディングスクールを、
+        「全寮制」「高校まで一貫」「英語力の要件」など<strong>家庭の条件軸</strong>から探せます。
+      </p>
+      <p class="mt-6 text-sm text-slate-500">
+        掲載スクール <strong class="text-slate-800">{classrooms.length}</strong> 件 ／ 公式パートナー <strong class="text-amber-600">{partnerCount}</strong> 件 ／ 10日ごとに自動更新
+      </p>
+    </div>
+  </section>
+
+  <main id="classrooms" class="mx-auto max-w-6xl px-4 pt-8">
+    <!-- フィルタ -->
+    <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+      <div class="flex flex-wrap items-center gap-2" id="area-tabs" role="tablist" aria-label="エリア">
+        <button data-area="all" class="area-tab rounded-full px-4 py-1.5 text-sm font-bold">全国</button>
+        {Object.entries(AREA_LABELS).map(([key, label]) => (
+          <button data-area={key} class="area-tab rounded-full px-4 py-1.5 text-sm font-bold">{label}</button>
+        ))}
+      </div>
+
+      <div class="mt-3 flex flex-wrap items-center gap-2" aria-label="学齢">
+        <span class="text-xs font-semibold text-slate-400">学齢</span>
+        <button data-stage="all" class="stage-chip rounded-full border px-3 py-1 text-xs font-semibold">すべて</button>
+        {Object.entries(STAGE_LABELS).map(([key, label]) => (
+          <button data-stage={key} class="stage-chip rounded-full border px-3 py-1 text-xs font-semibold">{label}</button>
+        ))}
+      </div>
+
+      <div class="mt-3 flex flex-wrap items-center gap-2" aria-label="条件で絞り込み">
+        <span class="text-xs font-semibold text-slate-400">条件</span>
+        {Object.entries(FEATURE_LABELS).map(([key, label]) => (
+          <button data-feature={key} class="feature-chip rounded-full border px-3 py-1 text-xs font-semibold">{label}</button>
+        ))}
+      </div>
+
+      <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <input
+          id="keyword"
+          type="search"
+          placeholder="キーワード（例：IB / ボーディング / 名古屋）"
+          class="w-full rounded-xl border border-slate-300 px-4 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 sm:max-w-xs"
+        />
+        <select id="sort" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+          <option value="recommended">おすすめ順（公式パートナー優先）</option>
+          <option value="newest">新着順</option>
+        </select>
+        <p class="text-sm text-slate-500 sm:ml-auto"><span id="result-count">{classrooms.length}</span> 件ヒット</p>
+      </div>
+    </div>
+
+    <!-- スクールカード -->
+    <div id="card-grid" class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {sorted.map((c) => (
+        <article
+          data-card
+          data-id={c.id}
+          data-area={c.area}
+          data-stages={c.stages.join(',')}
+          data-features={c.features.join(',')}
+          data-partner={c.partner ? '1' : '0'}
+          data-added={c.addedAt}
+          data-search={`${c.name} ${c.description} ${c.address} ${c.station}`.toLowerCase()}
+          class={`group relative flex cursor-pointer flex-col rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+            c.partner
+              ? 'border-amber-300 ring-2 ring-amber-300/70 bg-gradient-to-b from-amber-50/80 to-white'
+              : 'border-slate-200'
+          }`}
+        >
+          <div class="flex flex-wrap items-center gap-1.5">
+            {c.partner && (
+              <span class="inline-flex items-center gap-1 rounded-full bg-amber-400 px-2.5 py-0.5 text-[11px] font-extrabold text-amber-950">
+                ★ 公式パートナー
+              </span>
+            )}
+            {isNew(c) && (
+              <span class="rounded-full bg-rose-500 px-2 py-0.5 text-[11px] font-bold text-white">NEW</span>
+            )}
+            <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">
+              {AREA_LABELS[c.area]}
+            </span>
+            {c.stages.map((s) => (
+              <span class="rounded-full bg-indigo-100 px-2 py-0.5 text-[11px] font-bold text-indigo-700">{STAGE_LABELS[s]}</span>
+            ))}
+          </div>
+          <h2 class={`mt-3 font-bold leading-snug text-slate-900 group-hover:text-indigo-700 ${c.partner ? 'text-lg' : 'text-base'}`}>
+            {c.name}
+          </h2>
+          <p class="mt-1 text-xs text-slate-500">{c.station} ／ {c.ages}</p>
+          <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-600">{c.description}</p>
+          {c.features.length > 0 && (
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              {c.features.map((f) => (
+                <span class="rounded-md bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-700"># {FEATURE_LABELS[f]}</span>
+              ))}
+            </div>
+          )}
+          <div class="mt-auto pt-4">
+            <span class="text-sm font-bold text-indigo-600 group-hover:underline">詳しく見る →</span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p id="no-results" class="mt-10 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
+      条件に合うスクールが見つかりませんでした。条件を減らしてお試しください。
+    </p>
+
+    <!-- スクール運営者向けセクション -->
+    <section id="owner" class="mt-16 scroll-mt-24">
+      <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <div class="grid gap-0 lg:grid-cols-2">
+          <div class="bg-gradient-to-br from-slate-900 to-indigo-950 p-8 text-slate-100 sm:p-10">
+            <h2 class="text-2xl font-extrabold">スクール運営者の皆さまへ</h2>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">
+              全国インターナショナルスクール.comは公開情報をもとにスクール情報を無料掲載しています。
+              <strong class="text-white">年間10,000円の「公式パートナー」</strong>になると、次の優遇が受けられます。
+            </p>
+            <ul class="mt-5 space-y-3 text-sm">
+              <li class="flex gap-2"><span class="text-amber-400">★</span>検索結果の最上位に常時表示</li>
+              <li class="flex gap-2"><span class="text-amber-400">★</span>公式パートナーバッジ＆ゴールドデザインで目立つ掲載</li>
+              <li class="flex gap-2"><span class="text-amber-400">★</span>貴校のページから競合スクールの表示を非表示化</li>
+              <li class="flex gap-2"><span class="text-amber-400">★</span>掲載内容（写真・紹介文・学費）の自由編集</li>
+            </ul>
+            <p class="mt-6 text-xs text-slate-400">情報の修正・削除のみのご依頼は無料で承ります。下のフォームからどうぞ。</p>
+          </div>
+          <div class="p-8 sm:p-10">
+            <!-- Formspree: https://formspree.io で新しいフォームを作成し、YOUR_FORM_ID を差し替えてください -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+              <div>
+                <label for="f-type" class="block text-sm font-bold text-slate-700">ご用件 <span class="text-rose-500">*</span></label>
+                <select id="f-type" name="ご用件" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm">
+                  <option value="公式パートナー申込（年間1万円）">公式パートナーに申し込む（年間10,000円）</option>
+                  <option value="掲載情報の修正依頼">掲載情報の修正を依頼する（無料）</option>
+                  <option value="掲載情報の削除依頼">掲載情報の削除を依頼する（無料）</option>
+                  <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+                </select>
+              </div>
+              <div>
+                <label for="f-name" class="block text-sm font-bold text-slate-700">スクール名 <span class="text-rose-500">*</span></label>
+                <input id="f-name" name="スクール名" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" placeholder="例：○○インターナショナルスクール" />
+              </div>
+              <div>
+                <label for="f-email" class="block text-sm font-bold text-slate-700">メールアドレス <span class="text-rose-500">*</span></label>
+                <input id="f-email" type="email" name="email" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" placeholder="info@example.com" />
+              </div>
+              <div>
+                <label for="f-msg" class="block text-sm font-bold text-slate-700">内容</label>
+                <textarea id="f-msg" name="内容" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" placeholder="修正したい箇所、ご質問などをご記入ください"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 px-4 py-3 text-sm font-extrabold text-amber-950 shadow transition hover:brightness-105">
+                送信する
+              </button>
+              <p class="text-xs text-slate-400">通常2営業日以内にメールでご返信します。</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 詳細モーダル -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="modal-backdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    <div id="modal-panel" class="relative max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+      <button id="modal-close" class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200" aria-label="閉じる">✕</button>
+      <div id="modal-badges" class="flex flex-wrap gap-1.5 pr-10"></div>
+      <h3 id="modal-title" class="mt-3 text-xl font-extrabold text-slate-900"></h3>
+      <dl class="mt-4 space-y-2 text-sm">
+        <div class="flex gap-3"><dt class="w-20 shrink-0 font-bold text-slate-400">アクセス</dt><dd id="modal-station" class="text-slate-700"></dd></div>
+        <div class="flex gap-3"><dt class="w-20 shrink-0 font-bold text-slate-400">所在地</dt><dd id="modal-address" class="text-slate-700"></dd></div>
+        <div class="flex gap-3"><dt class="w-20 shrink-0 font-bold text-slate-400">対象</dt><dd id="modal-ages" class="text-slate-700"></dd></div>
+        <div class="flex gap-3"><dt class="w-20 shrink-0 font-bold text-slate-400">学費目安</dt><dd id="modal-price" class="text-slate-700"></dd></div>
+      </dl>
+      <p id="modal-description" class="mt-4 text-sm leading-relaxed text-slate-600"></p>
+      <div id="modal-review" class="mt-4 hidden rounded-xl bg-emerald-50 p-3">
+        <p class="text-[11px] font-extrabold text-emerald-700">在籍・卒業家庭の声（AI総評）</p>
+        <p id="modal-review-text" class="mt-1 text-sm leading-relaxed text-slate-700"></p>
+        <p id="modal-review-meta" class="mt-1 text-[11px] text-slate-400"></p>
+      </div>
+      <div id="modal-features" class="mt-3 flex flex-wrap gap-1.5"></div>
+      <div class="mt-6 flex flex-col gap-2 sm:flex-row">
+        <a id="modal-url" href="#" target="_blank" rel="noopener nofollow" class="flex-1 rounded-xl bg-indigo-600 px-4 py-2.5 text-center text-sm font-bold text-white hover:bg-indigo-500">公式サイトを見る</a>
+        <a id="modal-page" href="#" class="flex-1 rounded-xl border border-slate-300 px-4 py-2.5 text-center text-sm font-bold text-slate-700 hover:bg-slate-50">紹介ページへ</a>
+      </div>
+      <!-- 非パートナー校の詳細にのみ表示されるPR枠（パートナー特典：競合表示の非表示） -->
+      <div id="modal-ad" class="mt-5 hidden rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4">
+        <p class="text-[11px] font-bold text-slate-400">PR｜注目のスクール</p>
+        <div id="modal-ad-body" class="mt-1 text-sm"></div>
+      </div>
+      <p id="modal-partner-note" class="mt-5 hidden rounded-xl bg-amber-50 p-3 text-xs font-semibold text-amber-800">
+        ★ このスクールは全国インターナショナルスクール.com公式パートナーです。掲載内容はスクールにより直接管理されています。
+      </p>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" id="classroom-data" set:html={JSON.stringify(classrooms)} />
+
+  <script>
+    const DATA = JSON.parse(document.getElementById('classroom-data').textContent);
+    const byId = Object.fromEntries(DATA.map((c) => [c.id, c]));
+    const FEATURE_LABELS = {
+      boarding: '全寮制（ボーディング）',
+      k12: '高校まで一貫教育',
+      'english-required': '子どもの英語力必須',
+      'parent-english': '保護者の英語力必須',
+      ib: 'IB（国際バカロレア）認定',
+      'support-ja': '英語初心者・日本語サポートあり',
+    };
+    const AREA_LABELS = {
+      hokkaido: '北海道', tohoku: '東北', hokuriku: '北陸', kanto: '関東甲信越',
+      chubu: '中部', kansai: '関西', chushikoku: '中国・四国', kyushu: '九州・沖縄',
+    };
+
+    // ---------- フィルタ状態 ----------
+    const state = { area: 'all', stage: 'all', features: new Set(), keyword: '', sort: 'recommended' };
+    const grid = document.getElementById('card-grid');
+    const cards = Array.from(document.querySelectorAll('[data-card]'));
+    const count = document.getElementById('result-count');
+    const noResults = document.getElementById('no-results');
+
+    const ACTIVE_TAB = ['bg-indigo-600', 'text-white'];
+    const IDLE_TAB = ['bg-slate-100', 'text-slate-600'];
+    const ACTIVE_CHIP = ['bg-indigo-600', 'text-white', 'border-indigo-600'];
+    const IDLE_CHIP = ['bg-white', 'text-slate-600', 'border-slate-300'];
+
+    function paint(buttons, isActive, on, off) {
+      buttons.forEach((b) => {
+        const active = isActive(b);
+        b.classList.remove(...on, ...off);
+        b.classList.add(...(active ? on : off));
+      });
+    }
+
+    function render() {
+      paint(document.querySelectorAll('.area-tab'), (b) => b.dataset.area === state.area, ACTIVE_TAB, IDLE_TAB);
+      paint(document.querySelectorAll('.stage-chip'), (b) => b.dataset.stage === state.stage, ACTIVE_CHIP, IDLE_CHIP);
+      paint(document.querySelectorAll('.feature-chip'), (b) => state.features.has(b.dataset.feature), ACTIVE_CHIP, IDLE_CHIP);
+
+      let visible = 0;
+      cards.forEach((card) => {
+        const stages = card.dataset.stages ? card.dataset.stages.split(',') : [];
+        const features = card.dataset.features ? card.dataset.features.split(',') : [];
+        const ok =
+          (state.area === 'all' || card.dataset.area === state.area) &&
+          (state.stage === 'all' || stages.includes(state.stage)) &&
+          [...state.features].every((f) => features.includes(f)) &&
+          (state.keyword === '' || card.dataset.search.includes(state.keyword));
+        card.classList.toggle('hidden', !ok);
+        if (ok) visible++;
+      });
+
+      const sortedCards = [...cards].sort((a, b) => {
+        if (state.sort === 'recommended') {
+          return (
+            Number(b.dataset.partner) - Number(a.dataset.partner) ||
+            b.dataset.added.localeCompare(a.dataset.added)
+          );
+        }
+        return b.dataset.added.localeCompare(a.dataset.added);
+      });
+      sortedCards.forEach((c) => grid.appendChild(c));
+
+      count.textContent = String(visible);
+      noResults.classList.toggle('hidden', visible > 0);
+    }
+
+    document.querySelectorAll('.area-tab').forEach((b) =>
+      b.addEventListener('click', () => { state.area = b.dataset.area; render(); })
+    );
+    document.querySelectorAll('.stage-chip').forEach((b) =>
+      b.addEventListener('click', () => { state.stage = b.dataset.stage; render(); })
+    );
+    document.querySelectorAll('.feature-chip').forEach((b) =>
+      b.addEventListener('click', () => {
+        const k = b.dataset.feature;
+        state.features.has(k) ? state.features.delete(k) : state.features.add(k);
+        render();
+      })
+    );
+    document.getElementById('keyword').addEventListener('input', (e) => {
+      state.keyword = e.target.value.trim().toLowerCase();
+      render();
+    });
+    document.getElementById('sort').addEventListener('change', (e) => {
+      state.sort = e.target.value;
+      render();
+    });
+
+    // ---------- 詳細モーダル ----------
+    const modal = document.getElementById('modal');
+    const $ = (id) => document.getElementById(id);
+
+    function openModal(id) {
+      const c = byId[id];
+      if (!c) return;
+      $('modal-title').textContent = c.name;
+      $('modal-station').textContent = c.station;
+      $('modal-address').textContent = c.address;
+      $('modal-ages').textContent = c.ages;
+      $('modal-price').textContent = c.price;
+      $('modal-description').textContent = c.description;
+      $('modal-url').href = c.url;
+      $('modal-page').href = `/c/${c.id}/`;
+
+      const reviewBox = $('modal-review');
+      if (c.review?.summary) {
+        $('modal-review-text').textContent = c.review.summary;
+        $('modal-review-meta').textContent = `口コミ${c.review.count}件をAIが解析した総評（${c.review.updatedAt}更新）`;
+        reviewBox.classList.remove('hidden');
+      } else {
+        reviewBox.classList.add('hidden');
+      }
+
+      const badges = [];
+      if (c.partner) badges.push('<span class="rounded-full bg-amber-400 px-2.5 py-0.5 text-[11px] font-extrabold text-amber-950">★ 公式パートナー</span>');
+      badges.push(`<span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">${AREA_LABELS[c.area]}</span>`);
+      $('modal-badges').innerHTML = badges.join('');
+      $('modal-features').innerHTML = c.features
+        .map((f) => `<span class="rounded-md bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-700"># ${FEATURE_LABELS[f]}</span>`)
+        .join('');
+
+      // パートナー特典：競合PR枠の非表示
+      $('modal-partner-note').classList.toggle('hidden', !c.partner);
+      const adBox = $('modal-ad');
+      if (c.partner) {
+        adBox.classList.add('hidden');
+      } else {
+        const rival = DATA.find((x) => x.partner && x.area === c.area && x.id !== c.id) || DATA.find((x) => x.partner);
+        if (rival) {
+          $('modal-ad-body').innerHTML =
+            `<button data-ad-link="${rival.id}" class="font-bold text-indigo-700 hover:underline">★ ${rival.name}</button>` +
+            `<span class="ml-1 text-xs text-slate-500">${AREA_LABELS[rival.area]}・公式パートナー</span>`;
+          adBox.classList.remove('hidden');
+          adBox.querySelector('[data-ad-link]').addEventListener('click', (e) => openModal(e.currentTarget.dataset.adLink));
+        } else {
+          adBox.classList.add('hidden');
+        }
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    cards.forEach((card) => card.addEventListener('click', () => openModal(card.dataset.id)));
+    $('modal-close').addEventListener('click', closeModal);
+    $('modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    render();
+  </script>
+</Base>

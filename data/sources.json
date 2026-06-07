@@ -1,0 +1,70 @@
+{
+  "_comment": "クローラの巡回先リスト。スクール公式サイト・業界団体の一覧ページ等を登録。大手ポータル・口コミサイトのDBページは登録しないこと。全URLは2026-06-07時点で実在・コンテンツ確認済み。",
+  "sources": [
+    {
+      "url": "https://www.his.ac.jp/",
+      "areaHint": "hokkaido",
+      "note": "北海道インターナショナルスクール（札幌・ニセコ校、PreSchool〜G12、ボーディング併設）"
+    },
+    {
+      "url": "http://www.tisweb.net/",
+      "areaHint": "tohoku",
+      "note": "東北インターナショナルスクール（仙台・幼稚科〜高等科K-12）"
+    },
+    {
+      "url": "https://www.unison-world.jp/",
+      "areaHint": "tohoku",
+      "note": "ユニソン・ワールド英語保育園（仙台・2〜5歳プリスクール）"
+    },
+    {
+      "url": "https://www.weskiilab.com/",
+      "areaHint": "hokuriku",
+      "note": "Weskii Lab（金沢3校舎・富山校、0歳〜小学生インター保育園/英語学童）"
+    },
+    {
+      "url": "https://yis.ac.jp/",
+      "areaHint": "kanto",
+      "note": "横浜インターナショナルスクール（YIS、3歳〜G12のIB一貫校）"
+    },
+    {
+      "url": "https://uwcisak.jp/ja/",
+      "areaHint": "kanto",
+      "note": "UWC ISAK Japan（軽井沢・日本初の全寮制国際高校、IB DP）"
+    },
+    {
+      "url": "https://www.jcis.jp/member-schools/",
+      "areaHint": "kanto",
+      "note": "Japan Council of International Schools 加盟校一覧（全国の主要インター30校・業界団体公式リスト）"
+    },
+    {
+      "url": "https://www.nis.ac.jp/japanese/admissions",
+      "areaHint": "chubu",
+      "note": "名古屋国際学園（NIS、3歳〜G12のIB全課程認定校）"
+    },
+    {
+      "url": "https://oyis.org/admissions/",
+      "areaHint": "kansai",
+      "note": "大阪YMCAインターナショナルスクール（OYIS、K〜G12のIB一貫校）"
+    },
+    {
+      "url": "https://www.hiroshima-is.ac.jp/",
+      "areaHint": "chushikoku",
+      "note": "広島インターナショナルスクール（3〜18歳・中国地方の全課程英語インター）"
+    },
+    {
+      "url": "https://www.takamatsu-is.com/",
+      "areaHint": "chushikoku",
+      "note": "高松インターナショナルスクール（英語保育園・Primary・英語学童）"
+    },
+    {
+      "url": "https://www.fis.ed.jp/join/admissions",
+      "areaHint": "kyushu",
+      "note": "福岡インターナショナルスクール（FIS、PreK〜G12のIB校）"
+    },
+    {
+      "url": "https://ocsi.org/admissions-faqs/",
+      "areaHint": "kyushu",
+      "note": "沖縄クリスチャンスクールインターナショナル（OCSI、Pre-K〜G12・米式カリキュラム）"
+    }
+  ]
+}
