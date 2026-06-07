@@ -3,8 +3,17 @@
     "id": "kanto-tokyo-bayside-intl",
     "name": "東京ベイサイドインターナショナルスクール",
     "area": "kanto",
-    "stages": ["preschool", "elementary", "middle", "high"],
-    "features": ["k12", "english-required", "ib"],
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "ib"
+    ],
     "address": "東京都江東区有明2丁目",
     "station": "国際展示場駅 徒歩8分",
     "ages": "3歳〜18歳（K-12一貫）",
@@ -18,8 +27,15 @@
     "id": "kansai-kyoto-greenhills",
     "name": "京都グリーンヒルズインターナショナルスクール",
     "area": "kansai",
-    "stages": ["middle", "high"],
-    "features": ["boarding", "english-required", "ib"],
+    "stages": [
+      "middle",
+      "high"
+    ],
+    "features": [
+      "boarding",
+      "english-required",
+      "ib"
+    ],
     "address": "京都府京都市左京区",
     "station": "京都駅からスクールバス40分",
     "ages": "12歳〜18歳（中高）",
@@ -33,8 +49,16 @@
     "id": "hokkaido-niseko-global",
     "name": "ニセコグローバルアカデミー",
     "area": "hokkaido",
-    "stages": ["elementary", "middle", "high"],
-    "features": ["k12", "boarding", "english-required"],
+    "stages": [
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "boarding",
+      "english-required"
+    ],
     "address": "北海道虻田郡ニセコ町",
     "station": "JRニセコ駅 車7分（寮・スクールバスあり）",
     "ages": "6歳〜18歳",
@@ -48,8 +72,13 @@
     "id": "tohoku-sendai-prep",
     "name": "仙台インターナショナルプレップスクール",
     "area": "tohoku",
-    "stages": ["preschool", "elementary"],
-    "features": ["support-ja"],
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
     "address": "宮城県仙台市青葉区",
     "station": "地下鉄南北線 北四番丁駅 徒歩5分",
     "ages": "1歳6ヶ月〜12歳",
@@ -63,8 +92,13 @@
     "id": "hokuriku-kanazawa-global",
     "name": "金沢グローバルスクール",
     "area": "hokuriku",
-    "stages": ["preschool", "elementary"],
-    "features": ["parent-english"],
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "parent-english"
+    ],
     "address": "石川県金沢市広岡1丁目",
     "station": "金沢駅 徒歩10分",
     "ages": "2歳〜12歳",
@@ -78,8 +112,14 @@
     "id": "chubu-nagoya-central",
     "name": "名古屋セントラルインターナショナルスクール",
     "area": "chubu",
-    "stages": ["elementary", "middle"],
-    "features": ["ib", "english-required"],
+    "stages": [
+      "elementary",
+      "middle"
+    ],
+    "features": [
+      "ib",
+      "english-required"
+    ],
     "address": "愛知県名古屋市東区",
     "station": "地下鉄桜通線 高岳駅 徒歩6分",
     "ages": "6歳〜15歳",
@@ -93,8 +133,13 @@
     "id": "chushikoku-setouchi-village",
     "name": "瀬戸内グローバルビレッジスクール",
     "area": "chushikoku",
-    "stages": ["preschool", "elementary"],
-    "features": ["support-ja"],
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
     "address": "広島県広島市中区",
     "station": "広電 袋町駅 徒歩4分",
     "ages": "2歳〜12歳",
@@ -108,8 +153,17 @@
     "id": "kyushu-okinawa-pacific",
     "name": "沖縄パシフィックインターナショナルアカデミー",
     "area": "kyushu",
-    "stages": ["preschool", "elementary", "middle", "high"],
-    "features": ["k12", "english-required", "parent-english"],
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english"
+    ],
     "address": "沖縄県中頭郡北谷町",
     "station": "那覇空港から車40分（スクールバスあり）",
     "ages": "3歳〜18歳（K-12一貫）",
@@ -118,5 +172,248 @@
     "url": "https://example.com/okinawa-pacific",
     "partner": false,
     "addedAt": "2026-05-05"
+  },
+  {
+    "id": "hokkaido-hokkaido-international-school-j8kq4",
+    "name": "Hokkaido International School",
+    "area": "hokkaido",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "boarding",
+      "k12"
+    ],
+    "address": "1-55, 5 jo 19 chome Hiragishi, Toyohira-Ku Sapporo, Japan 062-0935",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（Early Yearsから高等部まで）",
+    "price": "要問い合わせ",
+    "description": "Hokkaido International Schoolは、Early Yearsから高等部までの一貫教育を提供するボーディングスクールです。アートやアウトドアプログラムに力を入れ、生徒の創造性と探求心を育みます。札幌に位置し、WASC認定校として質の高い国際教育を提供。寮制度があり、国内外からの生徒を受け入れ、多様なコミュニティを形成しています。",
+    "url": "https://www.his.ac.jp/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "tohoku-school-1pfz1np",
+    "name": "ユニソン・ワールド英語保育園",
+    "area": "tohoku",
+    "stages": [
+      "preschool"
+    ],
+    "features": [],
+    "address": "宮城県仙台市宮城野区榴岡3-8-15",
+    "station": "JR仙台駅 東口 徒歩7分／JR榴ヶ岡駅 徒歩6分／地下鉄東西線 宮城野通駅 徒歩7分",
+    "ages": "2歳〜5歳",
+    "price": "年間学費目安 96万円〜",
+    "description": "ユニソン・ワールド英語保育園は、仙台市にある100%英語教育を提供するプリスクールです。東北で唯一、英語・中国語・日本語のトリリンガル育成を目指し、多国籍文化を学ぶことで国際感覚を培います。2歳から5歳児を対象とし、日常会話を通じて無理なく英語を習得できる環境です。認可外保育施設として無償化対象であり、年間学費目安は96万円です。JR仙台駅東口から徒歩7分とアクセスも良好で、国際的な視野を持つ子どもを育てたい家庭に適しています。",
+    "url": "https://www.unison-world.jp/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "hokuriku-weskii-lab-17qu92r",
+    "name": "Weskii Lab 金沢本校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
+    "address": "〒920-0902 金沢市尾張町1丁目2-32 Weskiiビル2階",
+    "station": "要問い合わせ",
+    "ages": "0歳〜12歳程度（Preschool, After School）",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、0歳から小学生までを対象とした金沢・富山のインターナショナルスクールです。オールイングリッシュの環境で、世界が証明した「聞く・話す」教育法を実践。無理に英語を強要せず、自然な形で英語を習得できるため、英語初心者のお子様も安心して通えます。保育園と放課後学童を通じて、日常の中で生きた英語とSTEAM教育を体験し、バイリンガルへと成長します。保護者の負担軽減にも配慮した子育て支援も特徴です。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "hokuriku-weskii-lab-6qhtjd",
+    "name": "Weskii Lab 金沢駅西校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
+    "address": "〒920-0043 金沢市長田2丁目26-11",
+    "station": "要問い合わせ",
+    "ages": "0歳〜12歳程度（Preschool, After School）",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、0歳から小学生までを対象とした金沢・富山のインターナショナルスクールです。オールイングリッシュの環境で、世界が証明した「聞く・話す」教育法を実践。無理に英語を強要せず、自然な形で英語を習得できるため、英語初心者のお子様も安心して通えます。保育園と放課後学童を通じて、日常の中で生きた英語とSTEAM教育を体験し、バイリンガルへと成長します。保護者の負担軽減にも配慮した子育て支援も特徴です。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "hokuriku-weskii-lab-6jy15q",
+    "name": "Weskii Lab 金沢泉野校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
+    "address": "〒921-8034 石川県金沢市泉野町4丁目13-33 泉野ビル2階",
+    "station": "要問い合わせ",
+    "ages": "0歳〜12歳程度（Preschool, After School）",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、0歳から小学生までを対象とした金沢・富山のインターナショナルスクールです。オールイングリッシュの環境で、世界が証明した「聞く・話す」教育法を実践。無理に英語を強要せず、自然な形で英語を習得できるため、英語初心者のお子様も安心して通えます。保育園と放課後学童を通じて、日常の中で生きた英語とSTEAM教育を体験し、バイリンガルへと成長します。保護者の負担軽減にも配慮した子育て支援も特徴です。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "hokuriku-weskii-lab-1tcgn1r",
+    "name": "Weskii Lab 富山校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
+    "address": "〒930-0887 富山県富山市五福5897-1",
+    "station": "要問い合わせ",
+    "ages": "0歳〜12歳程度（Preschool, After School）",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、0歳から小学生までを対象とした金沢・富山のインターナショナルスクールです。オールイングリッシュの環境で、世界が証明した「聞く・話す」教育法を実践。無理に英語を強要せず、自然な形で英語を習得できるため、英語初心者のお子様も安心して通えます。保育園と放課後学童を通じて、日常の中で生きた英語とSTEAM教育を体験し、バイリンガルへと成長します。保護者の負担軽減にも配慮した子育て支援も特徴です。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "chubu-nagoya-international-school-a0c0ub",
+    "name": "Nagoya International School",
+    "area": "chubu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib"
+    ],
+    "address": "愛知県名古屋市守山区中志段味南原2686",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "名古屋国際学園は、幼児部から高等部までの一貫教育を提供する国際バカロレア(IB)認定校です。生徒には同年齢のネイティブと同等の高い英語力と学力が求められ、英語力取得のみを目的とした入学はできません。保護者も学校との主要なコミュニケーションが英語となるため、意思疎通が図れる英語力が必要です。国際的な環境でK-12一貫教育を望む、高い英語力を持つお子様と、学校との英語での連携に意欲的なご家庭に適しています。",
+    "url": "https://www.nis.ac.jp/japanese/admissions",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "kansai-osaka-ymca-international-school-1mivds7",
+    "name": "Osaka YMCA International School",
+    "area": "kansai",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib"
+    ],
+    "address": "Nakatsuキャンパス: 6 Chome-7-34 Nakatsu, Kita Ward, Osaka, 531-0071, Japan / Tosaboriキャンパス: 1-chōme−5−6 9F, Tosabori, Nishi Ward, Osaka, 550-0001, Japan",
+    "station": "Nakatsuキャンパスは大阪の主要交通ハブ近く、Tosaboriキャンパスは公共交通機関でアクセス可能。スクールバスも運行。",
+    "ages": "0歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "大阪YMCAインターナショナルスクールは、幼稚園から高校までの一貫教育を提供する国際バカロレア認定校です。生徒の学業と個人の成功にコミットし、多様な国籍の生徒を受け入れています。入学には英語力が必要で、オンラインテストや面接があります。保護者にも英語でのコミュニケーションが推奨されます。英語初心者向けのサポートも提供され、国際教育を求めるご家庭に適しています。",
+    "url": "https://oyis.org/admissions/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "chushikoku-school-19bt1ym",
+    "name": "高松インターナショナルスクール",
+    "area": "chushikoku",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required"
+    ],
+    "address": "香川県高松市番町2-4-27 番町スクエア2F",
+    "station": "要問い合わせ",
+    "ages": "乳幼児〜高校生",
+    "price": "要問い合わせ",
+    "description": "高松インターナショナルスクールは、グローバルな視野を育む英語教育機関です。PreschoolではイギリスのEYFS、Primary Schoolでは英語圏カリキュラムで学び、授業は全て英語で行われます。After Schoolでは中高生向けプログラムも提供。Primary卒業後は提携するAscot International School（神戸）への進学支援や海外留学サポートがあり、国際的な学習体験を通じて自己成長とリーダーシップスキルを養います。不登校の",
+    "url": "https://www.takamatsu-is.com/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "kyushu-fukuoka-international-school-1wj75ui",
+    "name": "Fukuoka International School",
+    "area": "kyushu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib",
+      "support-ja"
+    ],
+    "address": "福岡県福岡市早良区百道3-18-50",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "福岡インターナショナルスクールは、3歳から18歳までの一貫教育を提供する国際バカロレア認定校です。早期教育から高等部まで対応し、授業は英語で行われます。初等部以上では英語力が求められますが、早期教育では不要です。保護者には英語力が実質的に必要ですが、入学後の日本語サポートも一部提供されます。国際的なコミュニティに貢献することを使命とし、多様な国籍の生徒を歓迎します。寮はなく、最低1年間の在籍が条件です。早期教育の入学にはトイレトレーニングが必須です。",
+    "url": "https://www.fis.ed.jp/",
+    "partner": false,
+    "addedAt": "2026-06-07"
+  },
+  {
+    "id": "kyushu-okinawa-christian-school-international-pn5533",
+    "name": "Okinawa Christian School International",
+    "area": "kyushu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english"
+    ],
+    "address": "1835 Zakimi, Yomitan Okinawa, Japan 904-0301",
+    "station": "要問い合わせ",
+    "ages": "5歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "沖縄クリスチャンスクールインターナショナルは、幼稚園から高校までの一貫教育を提供する学校です。全科目を英語で教えるため、入学には子どもの十分な英語力が必要で、英語の入学試験が課されます。保護者も学校からの通知を理解できるよう、英語力があることが求められます。ビザのスポンサーシップや、個別教育計画（IEP）のような特別な支援は提供していません。",
+    "url": "https://ocsi.org/",
+    "partner": false,
+    "addedAt": "2026-06-07"
   }
 ]
