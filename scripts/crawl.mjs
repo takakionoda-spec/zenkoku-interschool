@@ -76,7 +76,11 @@ async function isAllowedByRobots(url) {
 
 async function fetchPage(url) {
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'ZenkokuInterschoolBot/1.0 (+national international-school portal)' },
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (compatible; ZenkokuInterschoolBot/1.0; national international-school portal)',
+      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'ja,en;q=0.8',
+    },
     signal: AbortSignal.timeout(20000),
     redirect: 'follow',
   });
