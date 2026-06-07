@@ -40,6 +40,7 @@ jobs:
           git add src/data/classrooms.json data/reviews.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: auto-update classrooms & reviews ($(date +%Y-%m-%d))"
+            git pull --rebase origin main   # 実行中に他のpushがあっても取り込んでから押し返す
             git push
           else
             echo "変更なし。commitをスキップ"
