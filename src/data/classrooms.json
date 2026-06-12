@@ -415,5 +415,179 @@
     "url": "https://ocsi.org/",
     "partner": false,
     "addedAt": "2026-06-07"
+  },
+  {
+    "id": "tohoku-school-14hnp5a",
+    "name": "東北インターナショナルスクール",
+    "area": "tohoku",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "ib",
+      "support-ja"
+    ],
+    "address": "宮城県仙台市泉区館7-101-1",
+    "station": "要問い合わせ",
+    "ages": "幼稚科から高等科まで（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "東北インターナショナルスクールは、幼稚科から高等科まで英語で一貫教育を提供する東北唯一のインターナショナルスクールです。国際バカロレア（IB PYPおよびDP）認定校であり、WASCと日本の学校法人からも正式な認定を受けています。英語が母国語ではない生徒にはEALサポートプログラムを提供し、国際基準に基づいた質の高いカリキュラムを通じて、思考力、探究心、社会性、自己管理力、コミュニケーション能力を育みます。国際的な教育環境で、多様な文化を理解し、グローバル",
+    "url": "http://www.tisweb.net/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "hokuriku-weskii-lab-wjbi5g",
+    "name": "Weskii Lab（ウェスキーラボ）",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [
+      "support-ja"
+    ],
+    "address": "金沢本校: 〒920-0902 金沢市尾張町1丁目2-32 Weskiiビル2階, 金沢駅西校: 〒920-0043 金沢市長田2丁目26-11, 金沢泉野校: 〒921-8034 石川県金沢市泉野町4丁目13-33 泉野ビル2階, 富山校: 〒930-0887 富山県富山市五福5897-1",
+    "station": "要問い合わせ",
+    "ages": "0歳〜小学生（放課後学童含む）",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、富山・金沢で0歳から小学生までを対象に、世界標準の「生きた英語」を日常で習得できるバイリンガル保育園・放課後学童です。高額な費用や留学なしに、オールイングリッシュ環境で自然に「話せるバイリンガル」を目指します。無理に英語を強要せず、子どもの成長に合わせ英語を定着させ、本場のSTEAM教育も実践。送迎や給食、看護師在籍など保護者の負担軽減にも配慮しています。英語初心者のお子様も安心して通え、将来を見据えた実践的な英語力を育みます。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kanto-yokohama-international-school-1ir2hsv",
+    "name": "Yokohama International School",
+    "area": "kanto",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "ib"
+    ],
+    "address": "横浜市",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "横浜インターナショナルスクールは1924年創立の日本を代表するインターナショナルスクールです。3歳から18歳までの一貫教育を提供し、IB PYPおよびMYPを導入。好奇心と回復力を育むホリスティックな生徒中心のアプローチが特徴です。50カ国以上の多様な生徒が在籍し、探究学習や日本文化プログラムを通じて、グローバル社会で活躍できる人材を育成します。2022年1月には最新設備を備えたキャンパスを開設しました。",
+    "url": "https://yis.ac.jp/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kanto-isak-dfcb3s",
+    "name": "ユナイテッド・ワールド・カレッジISAKジャパン",
+    "area": "kanto",
+    "stages": [
+      "high"
+    ],
+    "features": [
+      "boarding",
+      "english-required"
+    ],
+    "address": "長野県北佐久郡軽井沢町長倉5827-136",
+    "station": "要問い合わせ",
+    "ages": "15歳〜18歳（高校1〜3年生）",
+    "price": "要問い合わせ",
+    "description": "ユナイテッド・ワールド・カレッジISAKジャパンは、日本初の全寮制国際高校（10-12年生／高校1〜3年生）です。知的好奇心と共感力、想像力に富む世界中の生徒が集まり、身近なところから変革を起こせる次世代リーダーを育む革新的な教育を提供しています。多様な環境で自立心を養い、グローバルな視点を持つ生徒に適しています。",
+    "url": "https://uwcisak.jp/ja/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "tohoku-tohoku-international-school-13c88yi",
+    "name": "Tohoku International School",
+    "area": "tohoku",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12"
+    ],
+    "address": "Sendai, Miyagi",
+    "station": "要問い合わせ",
+    "ages": "0歳〜18歳（Kindergarten-Grade 12）",
+    "price": "要問い合わせ",
+    "description": "仙台市にある、東北地方唯一の幼稚園から高校までの一貫教育を提供する国際学校です。世界各国から生徒が通学し、北米、ヨーロッパ、オーストラリア、ニュージーランド、日本などの大学に進学しています。責任感があり、オープンマインドで、知識が豊富で、リスクを恐れず、優れたコミュニケーターとなることを目指します。",
+    "url": "https://www.jcis.jp/member-schools/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kanto-columbia-international-school-1rjwfdw",
+    "name": "Columbia International School",
+    "area": "kanto",
+    "stages": [
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "boarding"
+    ],
+    "address": "Tokorozawa, Saitama",
+    "station": "要問い合わせ",
+    "ages": "要問い合わせ",
+    "price": "要問い合わせ",
+    "description": "埼玉県所沢市にある、カナダのオンタリオ州教育省認定の全日制およびボーディングスクールです。少人数制クラスで、生徒一人ひとりが学習プロセスに積極的に参加できる安全で健全な学習環境を提供。卒業生は日本、カナダ、アメリカなどの主要大学に進学しています。生徒の社会的・感情的発達も重視しています。",
+    "url": "https://www.jcis.jp/member-schools/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kanto-american-school-in-japan-149zadz",
+    "name": "American School in Japan",
+    "area": "kanto",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12"
+    ],
+    "address": "Tokyo",
+    "station": "要問い合わせ",
+    "ages": "0歳〜18歳（Nursery-Grade 12）",
+    "price": "要問い合わせ",
+    "description": "1902年創立、東京に2つのキャンパスを持つ、60カ国以上から1,700名以上の生徒が学ぶ国際学校です。六本木ヒルズの早期学習センター（Nursery-Kindergarten）はレッジョ・エミリア・アプローチを採用。調布キャンパス（Kindergarten-Grade 12）では、最先端施設で充実した芸術・体育プログラムを提供し、大学進学準備も万全です。",
+    "url": "https://www.jcis.jp/member-schools/",
+    "partner": false,
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kanto-aoba-japan-international-school-spg74",
+    "name": "Aoba-Japan International School",
+    "area": "kanto",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "ib",
+      "support-ja"
+    ],
+    "address": "Tokyo",
+    "station": "要問い合わせ",
+    "ages": "0歳〜18歳（IB PYP/MYP/DP）",
+    "price": "要問い合わせ",
+    "description": "東京に3つのキャンパスと幼稚園を持つ、国際バカロレア(IB)認定校です。Primary、Middle Years、Diplomaプログラムを提供し、世界で活躍するグローバルリーダーの育成を目指します。起業家精神、革新性、社会的責任を奨励し、強力な日本語サポートプログラムも提供。40カ国以上の1400名以上の生徒が在籍しています。",
+    "url": "https://www.jcis.jp/member-schools/",
+    "partner": false,
+    "addedAt": "2026-06-12"
   }
 ]
