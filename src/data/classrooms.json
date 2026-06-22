@@ -589,5 +589,31 @@
     "url": "https://www.jcis.jp/member-schools/",
     "partner": false,
     "addedAt": "2026-06-12"
+  },
+  {
+    "id": "kansai-ymca-xvb8m7",
+    "name": "大阪YMCAインターナショナルスクール",
+    "area": "kansai",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib",
+      "support-ja"
+    ],
+    "address": "大阪府大阪市北区中津6-7-34（中津キャンパス）、大阪府大阪市西区土佐堀1-5-6 9F（土佐堀キャンパス）",
+    "station": "中津キャンパスは主要駅周辺にスクールバスあり、土佐堀キャンパスは公共交通機関でアクセス可能",
+    "ages": "0歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "大阪YMCAインターナショナルスクールは、幼稚園から高校まで（K-12）の一貫教育を提供する国際バカロレア認定校です。PYP, MYP, DPプログラムを提供し、生徒の学業と人格形成を重視します。入学には英語力が必要で、保護者にも英語でのコミュニケーションが推奨されます。英語初心者向けのサポートや奨学金制度も充実。大阪市内に2つのキャンパスを持ち、国際的な環境で学びたい家庭に適しています。",
+    "url": "https://oyis.org/admissions/",
+    "partner": false,
+    "addedAt": "2026-06-22"
   }
 ]
