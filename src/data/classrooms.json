@@ -615,5 +615,28 @@
     "url": "https://oyis.org/admissions/",
     "partner": false,
     "addedAt": "2026-06-22"
+  },
+  {
+    "id": "hokkaido-school-bjswrl",
+    "name": "北海道インターナショナルスクール",
+    "area": "hokkaido",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "boarding",
+      "k12"
+    ],
+    "address": "北海道札幌市豊平区平岸5条19丁目1-55",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "北海道インターナショナルスクールは、札幌市に位置するWASC認定の国際学校です。早期教育（Early Years）から高校までの一貫教育（K-12）を提供し、寮制度も完備しています。アートやアウトドアプログラムに力を入れ、生徒の創造性やコミュニティへの貢献を重視。過去を尊重し、未来を鼓舞し、現在を味わうことを教育理念としています。ニセコにもキャンパスがあります。",
+    "url": "https://www.his.ac.jp/",
+    "partner": false,
+    "addedAt": "2026-07-01"
   }
 ]
