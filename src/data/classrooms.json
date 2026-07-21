@@ -638,5 +638,56 @@
     "url": "https://www.his.ac.jp/",
     "partner": false,
     "addedAt": "2026-07-01"
+  },
+  {
+    "id": "chubu-school-18m81jy",
+    "name": "名古屋国際学園",
+    "area": "chubu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib"
+    ],
+    "address": "名古屋市守山区中志段味南原2686",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "名古屋国際学園は、幼児部から高等部までの一貫教育を提供する国際バカロレア認定校です。入学には同年齢のネイティブスピーカーと同等の高い英語力と学力が求められ、保護者にも英語でのコミュニケーション能力が実質的に必要です。寮はなく、保護者との同居が必須です。年間を通じて入学を受け付けていますが、IBプログラムの途中入学は困難な場合があります。",
+    "url": "https://www.nis.ac.jp/japanese/admissions",
+    "partner": false,
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "kyushu-school-5rd2ea",
+    "name": "福岡インターナショナルスクール",
+    "area": "kyushu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english",
+      "ib",
+      "support-ja"
+    ],
+    "address": "福岡県福岡市早良区百道3-18-50",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（Early Yearsから高等部までの一貫教育）",
+    "price": "要問い合わせ",
+    "description": "福岡インターナショナルスクールは、日本在住の国際コミュニティを主な対象とする学校です。3歳からのEarly Yearsから高等部までの一貫教育を提供し、国際バカロレア(IB)カリキュラムを採用。初等部・中等部・高等部では英語力が求められ、保護者との連絡も英語が基本です。バイリンガルスタッフによる家族向け翻訳サポートや、神経多様性を持つ生徒へのサポートも行っています。最低1年間の在籍が条件で、全寮制ではありません。Early Years入学にはトイレトレーニ",
+    "url": "https://www.fis.ed.jp/",
+    "partner": false,
+    "addedAt": "2026-07-21"
   }
 ]
