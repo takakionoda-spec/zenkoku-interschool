@@ -689,5 +689,29 @@
     "url": "https://www.fis.ed.jp/",
     "partner": false,
     "addedAt": "2026-07-21"
+  },
+  {
+    "id": "tohoku-school-1pm73l8",
+    "name": "学校法人南光学園 東北インターナショナルスクール",
+    "area": "tohoku",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "ib",
+      "support-ja"
+    ],
+    "address": "宮城県仙台市泉区館7-101-1",
+    "station": "要問い合わせ",
+    "ages": "幼稚科から高等科まで（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "東北インターナショナルスクール（TIS）は、幼稚科から高等科までK-12一貫教育を英語で行う東北唯一の国際バカロレア認定校です。PYPとDPプログラムを提供し、国際基準に基づいた質の高いカリキュラムを提供。英語が母国語ではない生徒には手厚いEALサポートがあり、英語初心者でも安心して学べる環境です。多様な視点を受け入れ、思考力・探究心・社会性・自己管理力・コミュニケーション能力を育む教育を実践しています。",
+    "url": "http://www.tisweb.net/",
+    "partner": false,
+    "addedAt": "2026-08-01"
   }
 ]
