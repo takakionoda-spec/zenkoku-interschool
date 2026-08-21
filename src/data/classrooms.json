@@ -713,5 +713,54 @@
     "url": "http://www.tisweb.net/",
     "partner": false,
     "addedAt": "2026-08-01"
+  },
+  {
+    "id": "chubu-school-1jx5dy8",
+    "name": "名古屋インターナショナルスクール",
+    "area": "chubu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "ib",
+      "support-ja"
+    ],
+    "address": "名古屋市",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "NISは60年以上の歴史を持つ名古屋のインターナショナルスクールです。国際バカロレア(IB)プログラムを通じて、幼児部から高等部までの一貫教育を提供し、生徒の批判的思考力やコミュニケーション能力を育成します。入学には英語力要件があり、必要に応じて英語サポートも提供。多様な国際コミュニティの中で、グローバルな未来を担う人材を育むことを目指します。",
+    "url": "https://www.nis.ac.jp/japanese/admissions",
+    "partner": false,
+    "addedAt": "2026-08-21"
+  },
+  {
+    "id": "kyushu-school-1bxdf1v",
+    "name": "沖縄クリスチャン・スクール・インターナショナル",
+    "area": "kyushu",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "parent-english"
+    ],
+    "address": "沖縄県読谷村座喜味1835",
+    "station": "要問い合わせ",
+    "ages": "5歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "沖縄クリスチャン・スクール・インターナショナルは、沖縄県読谷村にあるK-12（幼稚園から高校）一貫教育を提供するインターナショナルスクールです。全教科が英語で教えられ、入学には十分な英語力が求められ、英語テストとMAPテストで評価されます。保護者も学校からの連絡を理解するため、英語力が必要です。特別な教育的ニーズへの対応は限られており、個別支援は提供していません。WASCとACSIの認定を受けています。",
+    "url": "https://ocsi.org/admissions-faqs/",
+    "partner": false,
+    "addedAt": "2026-08-21"
   }
 ]
