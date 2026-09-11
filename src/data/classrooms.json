@@ -762,5 +762,29 @@
     "url": "https://ocsi.org/admissions-faqs/",
     "partner": false,
     "addedAt": "2026-08-21"
+  },
+  {
+    "id": "kanto-school-189zahu",
+    "name": "横浜インターナショナルスクール",
+    "area": "kanto",
+    "stages": [
+      "preschool",
+      "elementary",
+      "middle",
+      "high"
+    ],
+    "features": [
+      "k12",
+      "english-required",
+      "ib"
+    ],
+    "address": "横浜市",
+    "station": "要問い合わせ",
+    "ages": "3歳〜18歳（K-12一貫）",
+    "price": "要問い合わせ",
+    "description": "横浜インターナショナルスクールは1924年創立の日本を代表するインターナショナルスクールです。3歳から高校卒業までの一貫教育を提供し、IB PYPおよびMYPに準拠した探究型カリキュラムが特徴。50カ国以上の生徒が在籍する多様な環境で、好奇心とレジリエンスを育みます。2022年開設の最新キャンパスで、生徒一人ひとりの成長をサポートします。",
+    "url": "https://yis.ac.jp/",
+    "partner": false,
+    "addedAt": "2026-09-11"
   }
 ]
