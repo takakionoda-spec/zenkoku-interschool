@@ -786,5 +786,41 @@
     "url": "https://yis.ac.jp/",
     "partner": false,
     "addedAt": "2026-09-11"
+  },
+  {
+    "id": "hokuriku-weskii-lab-international-z34jl1",
+    "name": "Weskii Lab International 金沢本校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [],
+    "address": "石川県金沢市尾張町1-2-32 Weskiiビル3階",
+    "station": "要問い合わせ",
+    "ages": "0歳〜小学生",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、世界で活躍する現役のプロが講師を務めるインターナショナル保育園・アフタースクールです。単なる語学学習に留まらず、エンジニアやアーティストなど第一線のプロと英語で対話し、実践形式で感性と思考力を育みます。教科書のない「実践型シリコンバレー流カリキュラム」で、英語をツールとして使いこなすオールイングリッシュ環境を提供。園児から小学生を対象に、日常の中で生きた英語力とプレゼンテーション能力を養います。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-10-02"
+  },
+  {
+    "id": "hokuriku-weskii-lab-international-165j5bx",
+    "name": "Weskii Lab International 富山校",
+    "area": "hokuriku",
+    "stages": [
+      "preschool",
+      "elementary"
+    ],
+    "features": [],
+    "address": "富山県富山市五福5897-1",
+    "station": "要問い合わせ",
+    "ages": "0歳〜小学生",
+    "price": "要問い合わせ",
+    "description": "Weskii Labは、世界で活躍する現役のプロが講師を務めるインターナショナル保育園・アフタースクールです。単なる語学学習に留まらず、エンジニアやアーティストなど第一線のプロと英語で対話し、実践形式で感性と思考力を育みます。教科書のない「実践型シリコンバレー流カリキュラム」で、英語をツールとして使いこなすオールイングリッシュ環境を提供。園児から小学生を対象に、日常の中で生きた英語力とプレゼンテーション能力を養います。",
+    "url": "https://www.weskiilab.com/",
+    "partner": false,
+    "addedAt": "2026-10-02"
   }
 ]
