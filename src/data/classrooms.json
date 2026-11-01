@@ -822,5 +822,45 @@
     "url": "https://www.weskiilab.com/",
     "partner": false,
     "addedAt": "2026-10-02"
+  },
+  {
+    "id": "kanto-uwc-isak-japan-10b4unt",
+    "name": "UWC ISAK Japan",
+    "area": "kanto",
+    "stages": [
+      "high"
+    ],
+    "features": [
+      "boarding",
+      "ib"
+    ],
+    "address": "長野県北佐久郡軽井沢町 長倉5827-136",
+    "station": "要問い合わせ",
+    "ages": "15歳〜18歳（Grade 10-12）",
+    "price": "要問い合わせ",
+    "description": "UWC ISAK Japanは、長野県軽井沢にある日本初の国際的な全寮制高校で、唯一のUWC加盟校です。高校1年次から3年次（Grade 10-12）の生徒を対象に、国際バカロレアDPと独自のリーダーシッププログラムを組み合わせた教育を提供。世界80カ国から多様な生徒が集い、約70%が奨学金を受給。知的好奇心と社会変革への意欲を持つ生徒を育成します。",
+    "url": "https://uwcisak.jp/ja/",
+    "partner": false,
+    "addedAt": "2026-10-31"
+  },
+  {
+    "id": "kansai-ascot-international-school-japan-plzm0m",
+    "name": "Ascot International School Japan",
+    "area": "kansai",
+    "stages": [
+      "middle",
+      "high"
+    ],
+    "features": [
+      "english-required"
+    ],
+    "address": "神戸市",
+    "station": "要問い合わせ",
+    "ages": "12歳頃〜18歳程度（中学部〜高等部）",
+    "price": "要問い合わせ",
+    "description": "Ascot International School Japanは、神戸に位置するインターナショナルスクールで、高松インターナショナルスクールの教育提携校です。TISのPrimary School卒業生は、推薦状入学枠や入学金割引などの特典を利用して進学可能。ケンブリッジインターナショナルのAS＆Aレベル（高校卒業・大学入学資格）を取得でき、卒業後は世界各国の大学や国内大学、米国のアイビーリーグ大学への進学も目指せます。",
+    "url": "https://www.takamatsu-is.com/",
+    "partner": false,
+    "addedAt": "2026-10-31"
   }
 ]
