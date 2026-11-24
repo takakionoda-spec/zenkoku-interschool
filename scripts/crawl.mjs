@@ -177,6 +177,10 @@ async function main() {
   const db = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
   const { sources } = JSON.parse(fs.readFileSync(SOURCES_PATH, 'utf8'));
   const existingKeys = new Set(db.map((c) => nameKey(c.name)));
+  // 巡回済みサイトの再巡回を防ぐ（同じ教室が表記ゆれで重複登録されるのを防止）
+  const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
+  const knownSources = new Set(db.map((c) => c.sourceUrl).filter(Boolean));
+  const knownHosts = new Set(db.flatMap((c) => [hostOf(c.url), hostOf(c.sourceUrl || '')]).filter(Boolean));
   const today = new Date().toISOString().slice(0, 10);
   let added = 0;
 
@@ -184,6 +188,10 @@ async function main() {
     if (added >= MAX_NEW_PER_RUN) break;
     console.log(`\n▶ ${src.url}`);
     try {
+      if (knownSources.has(src.url) || knownHosts.has(hostOf(src.url))) {
+        console.log('  掲載済みサイトのためスキップ');
+        continue;
+      }
       if (!(await isAllowedByRobots(src.url))) {
         console.log('  robots.txt により巡回をスキップ');
         continue;
@@ -215,6 +223,7 @@ async function main() {
           price: String(item.price || '要問い合わせ').trim(),
           description: item.description.trim().slice(0, 230),
           url: String(item.url || src.url).trim(),
+          sourceUrl: src.url,
           partner: false, // 有料パートナー化は人間がフォーム受付後にtrueへ変更
           addedAt: today,
         });
