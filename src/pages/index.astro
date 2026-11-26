@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import classrooms from '../data/classrooms.json';
+import HeroSlider from '../components/HeroSlider.astro';
+import banners from '../data/banners.json';
 
 export const AREA_LABELS = {
   hokkaido: '北海道',
@@ -39,19 +41,15 @@ const partnerCount = classrooms.filter((c) => c.partner).length;
   title="全国インターナショナルスクール.com｜日本全国のインター・プリスクール検索"
   description="北海道から九州・沖縄まで、日本全国のインターナショナルスクール・プリスクール・ボーディングスクールを「全寮制」「高校まで一貫」「英語力要件」などの切り口で探せる専門ポータル。"
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-b from-indigo-100 via-indigo-50 to-slate-50">
-    <div class="mx-auto max-w-6xl px-4 pb-10 pt-14 text-center">
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-        わが子に合うインターナショナルスクールが、<span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">全国から見つかる。</span>
-      </h1>
-      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
-        全国8エリアのインター・プリスクール・ボーディングスクールを、
-        「全寮制」「高校まで一貫」「英語力の要件」など<strong>家庭の条件軸</strong>から探せます。
-      </p>
-      <p class="mt-6 text-sm text-slate-500">
-        掲載スクール <strong class="text-slate-800">{classrooms.length}</strong> 件 ／ 公式パートナー <strong class="text-amber-600">{partnerCount}</strong> 件 ／ 10日ごとに自動更新
-      </p>
+  <!-- Hero：スライドショーバナー（内容は src/data/banners.json で管理） -->
+  <section class="hero-wrap">
+    <div class="mx-auto max-w-6xl px-4 pb-2 pt-5 sm:pt-8">
+      <HeroSlider banners={banners.slides} />
+      <dl class="hero-stats">
+        <div><dt>掲載スクール</dt><dd>{classrooms.length}<small>件</small></dd></div>
+        <div><dt>対応エリア</dt><dd>{Object.keys(AREA_LABELS).length}<small>エリア</small></dd></div>
+        <div><dt>情報の更新</dt><dd>10<small>日ごと</small></dd></div>
+      </dl>
     </div>
   </section>
 
