@@ -1,0 +1,38 @@
+{
+  "_howto": "TOPスライドショーの中身です。上から順に表示されます。広告に差し替えるときは、スライドを {\"id\":\"ad-会社名-2027-01\",\"type\":\"ad\",\"sponsor\":\"会社名\",\"image\":\"/banners/xxx-pc.jpg\",\"imageMobile\":\"/banners/xxx-sp.jpg\",\"alt\":\"バナーの説明\",\"href\":\"https://リンク先\"} の形にしてください。画像サイズは PC 1200×400px（3:1）、スマホ 800×800px（1:1）。画像は public/banners/ に置きます。一時的に非表示にするには \"active\": false を追加します。type が ad のスライドには自動で「PR」表記が付き、表示回数とクリック数がGA4（banner_view / banner_click）に記録されます。",
+  "slides": [
+    {
+      "id": "house-top",
+      "type": "house",
+      "label": "全国8エリア｜プリスクール〜高等部",
+      "title": "わが子に合うインターナショナルスクールが、<br><em>全国から見つかる。</em>",
+      "text": "「全寮制」「高校まで一貫」「IB認定」など、家庭の条件軸からスクールを探せます。",
+      "cta": "スクールをさがす",
+      "href": "#classrooms",
+      "bg": "linear-gradient(120deg,#4f46e5 0%,#7c3aed 100%)",
+      "mark": "IS"
+    },
+    {
+      "id": "house-new-2026-11",
+      "type": "house",
+      "label": "NEW｜掲載校を拡充",
+      "title": "JCIS加盟校を中心に<br>23校を追加しました",
+      "text": "東京・横浜・神戸・大阪・京都・広島など、公式情報を確認したスクールを掲載しています。",
+      "cta": "新着スクールを見る",
+      "href": "#classrooms",
+      "bg": "linear-gradient(120deg,#0f766e 0%,#0284c7 100%)",
+      "mark": "NEW"
+    },
+    {
+      "id": "house-owner",
+      "type": "house",
+      "label": "スクールを運営されている方へ",
+      "title": "スクールの掲載・情報の修正は<br>こちらから",
+      "text": "新規掲載のご相談や、掲載内容の修正・削除をフォームで受け付けています。",
+      "cta": "運営者向けのご案内",
+      "href": "#owner",
+      "bg": "linear-gradient(120deg,#be123c 0%,#c2410c 100%)",
+      "mark": "＋"
+    }
+  ]
+}
