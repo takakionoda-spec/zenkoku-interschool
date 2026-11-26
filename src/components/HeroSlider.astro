@@ -1,0 +1,182 @@
+---
+// TOPのスライドショーバナー。表示内容は src/data/banners.json で管理します。
+// 広告に差し替えるときは banners.json の該当スライドを type:"ad" にして image / href を入れるだけです。
+const { banners = [] } = Astro.props;
+const slides = banners.filter((b) => b && b.active !== false);
+const isExternal = (href) => /^https?:/.test(href || '');
+---
+<div class="hs" data-hero-slider data-interval="6000">
+  <div class="hs-track" data-track tabindex="0" role="region" aria-roledescription="carousel" aria-label="お知らせ・PRバナー">
+    {slides.map((b, i) => {
+      const Tag = b.href ? 'a' : 'div';
+      const ad = b.type === 'ad';
+      const rel = ad ? 'sponsored noopener' : isExternal(b.href) ? 'noopener' : undefined;
+      return (
+        <Tag
+          class={`hs-slide${b.image ? ' is-img' : ''}`}
+          href={b.href}
+          target={isExternal(b.href) ? '_blank' : undefined}
+          rel={rel}
+          data-slide
+          data-banner-id={b.id}
+          data-banner-type={ad ? 'ad' : 'house'}
+          style={b.image ? undefined : `background:${b.bg || 'linear-gradient(120deg,#0ea5e9,#4f46e5)'}`}
+        >
+          {b.image ? (
+            <picture>
+              {b.imageMobile && <source media="(max-width: 639px)" srcset={b.imageMobile} />}
+              <img src={b.image} alt={b.alt || b.sponsor || ''} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+            </picture>
+          ) : (
+            <>
+              <span class="hs-blob hs-blob-a" aria-hidden="true"></span>
+              <span class="hs-blob hs-blob-b" aria-hidden="true"></span>
+              {b.mark && <span class="hs-mark" aria-hidden="true">{b.mark}</span>}
+              <div class="hs-body">
+                {b.label && <span class="hs-label">{b.label}</span>}
+                {i === 0 ? <h1 class="hs-title" set:html={b.title} /> : <p class="hs-title" set:html={b.title} />}
+                {b.text && <p class="hs-text">{b.text}</p>}
+                {b.cta && <span class="hs-cta">{b.cta}<span aria-hidden="true"> →</span></span>}
+              </div>
+            </>
+          )}
+          {ad && <span class="hs-pr">PR{b.sponsor ? `｜${b.sponsor}` : ''}</span>}
+        </Tag>
+      );
+    })}
+  </div>
+  {slides.length > 1 && (
+    <>
+      <button type="button" class="hs-nav hs-prev" data-prev aria-label="前のバナー">‹</button>
+      <button type="button" class="hs-nav hs-next" data-next aria-label="次のバナー">›</button>
+      <div class="hs-dots">
+        {slides.map((_, i) => (
+          <button type="button" class="hs-dot" data-dot={i} aria-label={`バナー${i + 1}を表示`}></button>
+        ))}
+      </div>
+    </>
+  )}
+</div>
+
+<style is:global>
+  .hs { position: relative; }
+  .hs-track {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    border-radius: 1.75rem; box-shadow: 0 24px 60px -28px rgb(15 23 42 / 0.45);
+    overscroll-behavior-x: contain; outline-offset: 4px;
+  }
+  .hs-track::-webkit-scrollbar { display: none; }
+  .hs-slide {
+    position: relative; flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; align-items: center; overflow: hidden; aspect-ratio: 1 / 1;
+    color: #fff; text-decoration: none; isolation: isolate;
+  }
+  .hs-slide.is-img { background: #e2e8f0; }
+  .hs-slide picture, .hs-slide img { display: block; width: 100%; height: 100%; }
+  .hs-slide img { object-fit: cover; }
+  .hs-body { position: relative; z-index: 2; padding: 2.25rem 1.5rem 3.25rem; max-width: 46rem; }
+  .hs-label {
+    display: inline-block; border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.04em; background: rgb(255 255 255 / 0.2); border: 1px solid rgb(255 255 255 / 0.35);
+    backdrop-filter: blur(6px);
+  }
+  .hs-title {
+    margin-top: 0.9rem; font-family: var(--font-display); font-weight: 900; line-height: 1.3;
+    font-size: clamp(1.45rem, 5.6vw, 2.6rem); letter-spacing: 0.01em; text-wrap: balance;
+    text-shadow: 0 2px 18px rgb(15 23 42 / 0.18);
+  }
+  .hs-title em { font-style: normal; color: #fde68a; }
+  .hs-text { margin-top: 0.8rem; font-size: 0.92rem; line-height: 1.8; color: rgb(255 255 255 / 0.92); max-width: 34rem; }
+  .hs-cta {
+    display: inline-flex; align-items: center; margin-top: 1.2rem; border-radius: 999px; background: #fff; color: #0f172a;
+    padding: 0.65rem 1.4rem; font-size: 0.9rem; font-weight: 800; box-shadow: 0 10px 24px -12px rgb(15 23 42 / 0.5);
+    transition: transform 0.2s ease;
+  }
+  .hs-slide:hover .hs-cta { transform: translateX(4px); }
+  .hs-mark {
+    position: absolute; z-index: 1; right: -0.04em; bottom: -0.22em; font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(9rem, 30vw, 19rem); line-height: 1; color: rgb(255 255 255 / 0.13); user-select: none; pointer-events: none;
+  }
+  .hs-blob { position: absolute; z-index: 0; border-radius: 999px; filter: blur(40px); pointer-events: none; }
+  .hs-blob-a { width: 22rem; height: 22rem; right: 8%; top: -40%; background: rgb(255 255 255 / 0.28); }
+  .hs-blob-b { width: 16rem; height: 16rem; left: -6%; bottom: -45%; background: rgb(15 23 42 / 0.22); }
+  .hs-pr {
+    position: absolute; z-index: 3; top: 0.75rem; right: 0.75rem; border-radius: 0.4rem; background: rgb(15 23 42 / 0.6);
+    color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; letter-spacing: 0.06em;
+  }
+  .hs-nav {
+    position: absolute; z-index: 4; top: 50%; transform: translateY(-50%); display: none; place-items: center;
+    width: 2.6rem; height: 2.6rem; border-radius: 999px; background: rgb(255 255 255 / 0.92); color: #0f172a;
+    font-size: 1.5rem; line-height: 1; box-shadow: 0 8px 20px -8px rgb(15 23 42 / 0.5); cursor: pointer; transition: background 0.2s;
+  }
+  .hs-nav:hover { background: #fff; }
+  .hs-prev { left: -1rem; }
+  .hs-next { right: -1rem; }
+  .hs-dots { position: absolute; z-index: 4; left: 0; right: 0; bottom: 1rem; display: flex; justify-content: center; gap: 0.5rem; }
+  .hs-dot { width: 0.55rem; height: 0.55rem; border-radius: 999px; background: rgb(255 255 255 / 0.55); cursor: pointer; transition: width 0.3s, background 0.3s; }
+  .hs-dot[aria-current='true'] { width: 1.75rem; background: #fff; }
+  .hs-dot { box-shadow: 0 0 0 1px rgb(15 23 42 / 0.18); }
+  @media (min-width: 640px) {
+    .hs-slide { aspect-ratio: 3 / 1; }
+    .hs-body { padding: 2.5rem 3.5rem 3rem; }
+    .hs-text { font-size: 1rem; }
+  }
+  @media (min-width: 1024px) { .hs-nav { display: grid; } }
+</style>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll('[data-hero-slider]').forEach((root) => {
+      const track = root.querySelector('[data-track]');
+      const slides = [...root.querySelectorAll('[data-slide]')];
+      const dots = [...root.querySelectorAll('[data-dot]')];
+      if (!track || slides.length === 0) return;
+      const send = (name, el) => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', name, { banner_id: el.dataset.bannerId, banner_type: el.dataset.bannerType });
+      };
+      const seen = new Set();
+      let index = -1;
+      const setActive = (i) => {
+        if (i === index) return;
+        index = i;
+        dots.forEach((d, n) => d.setAttribute('aria-current', n === i ? 'true' : 'false'));
+        if (!seen.has(i)) { seen.add(i); send('banner_view', slides[i]); }
+      };
+      const go = (i) => {
+        const n = (i + slides.length) % slides.length;
+        track.scrollTo({ left: slides[n].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      };
+      let ticking = false;
+      track.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          setActive(Math.round(track.scrollLeft / track.clientWidth));
+        });
+      }, { passive: true });
+      slides.forEach((s) => s.addEventListener('click', () => send('banner_click', s)));
+      dots.forEach((d, n) => d.addEventListener('click', () => { go(n); restart(); }));
+      root.querySelector('[data-prev]')?.addEventListener('click', () => { go(index - 1); restart(); });
+      root.querySelector('[data-next]')?.addEventListener('click', () => { go(index + 1); restart(); });
+
+      const interval = Number(root.dataset.interval) || 6000;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let timer = null;
+      let paused = false;
+      const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+      const start = () => {
+        stop();
+        if (reduce || slides.length < 2) return;
+        timer = setInterval(() => { if (!paused && !document.hidden) go(index + 1); }, interval);
+      };
+      const restart = () => start();
+      ['mouseenter', 'focusin', 'touchstart'].forEach((e) => root.addEventListener(e, () => { paused = true; }, { passive: true }));
+      ['mouseleave', 'focusout'].forEach((e) => root.addEventListener(e, () => { paused = false; }));
+      root.addEventListener('touchend', () => { setTimeout(() => { paused = false; }, 4000); }, { passive: true });
+      setActive(0);
+      start();
+    });
+  })();
+</script>
